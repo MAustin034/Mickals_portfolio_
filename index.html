@@ -5,16 +5,17 @@
   <title>Mickal's Portfolio</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="main.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="js/main.js">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 
 </head>
 
-<body>
-  <nav class="navbar sticky-top navbar-inverse" id="Top">
+<body onload="load()">
+  <nav class="navigation navbar sticky-top navbar-inverse" id="mainNav">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MyNavbar">
@@ -22,21 +23,21 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand active" id="Top" href="#">Mickal Austin</a>
+        <a class="navbar-brand navigation__link" href="#top">Mickal Austin</a>
       </div>
       <div class="collapse navbar-collapse" id="MyNavbar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#Bio">Bio</a></li>
-          <li><a href="#Education">Education</a></li>
-          <li><a href="#Skills">Skills</a></li>
-          <li><a href="#Experience">Experience</a></li>
-          <li><a href="#Contact">Contact</a></li>
+          <li><a class="navigation__link" href="#Bio">Bio</a></li>
+          <li><a class="navigation__link" href="#Education" class="">Education</a></li>
+          <li><a class="navigation__link" href="#Skills">Skills</a></li>
+          <li><a class="navigation__link" href="#Experience">Experience</a></li>
+          <li><a class="navigation__link" href="#hidden" data-toggle="collapse">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div id="myCarousel"class="main">
+  <div id="myCarousel" id="top"  class="main page-section hero">
       <div class=" carousel-inner" role="listbox">
         <div class="item active">
           <img src="img/mountains.png" alt="">
@@ -55,7 +56,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 page-section">
         <h2 id="Bio">Bio</h2>
         <p>
           Hardworking, honest Coding student who is excellent at communication and ability to work in harmony with
@@ -82,7 +83,7 @@
   </div>
   <hr class="star-dark mb-5">
 
-  <div class="container text-center">
+  <div class="container text-center page-section">
     <h2 id="Education">Education</h2>
     <br>
     <div class="row">
@@ -110,7 +111,7 @@
 
 
 
-  <div class="container text-center">
+  <div class="container text-center page-section">
     <div class="row">
       <h2 id="Experience">Experience</h2>
       <h3>Wet N Wild From 5/2018 To 9/2018</h3>
@@ -134,7 +135,7 @@
     </div>
   </div>
   <hr class="star-dark mb-5">
-  <div class="container text-center">
+  <div class="container text-center page-section">
     <div class="row">
       <h2 id="Skills">Skills</h2>
       <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -177,9 +178,9 @@
   </div>
   </div>
   <hr class="star-dark mb-5">
-  <div class="container">
-    <div class="row">
-      <h4><a href="#hidden" data-toggle="collapse" id="Contact">Contact Me Here</a></h4>
+  <div class="container page-section">
+    <div class="row text-center">
+      <h4><a href="#hidden" data-toggle="collapse" class="text-center">Contact Me Here</a></h4>
       <div id="hidden" class="collapse">
           <section id="contact">
               <div class="container">
@@ -248,7 +249,11 @@
 
 
   </footer>
-
+<script>
+  var shiftWindow = function() { scrollBy(0, -100) };
+  window.addEventListener("hashchange", shiftWindow);
+  function load() { if (window.location.hash) shiftWindow(); }
+</script>
 </body>
 
 </html>
