@@ -15,7 +15,7 @@
 </head>
 
 <body onload="load()">
-  <nav class="navigation navbar sticky-top navbar-inverse" id="mainNav">
+  <nav class="navigation navbar sticky-top navbar-inverse" id="main_nav">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MyNavbar">
@@ -31,7 +31,7 @@
           <li><a class="navigation__link" href="#Education" class="">Education</a></li>
           <li><a class="navigation__link" href="#Skills">Skills</a></li>
           <li><a class="navigation__link" href="#Experience">Experience</a></li>
-          <li><a class="navigation__link" href="#hidden" data-toggle="collapse">Contact</a></li>
+          <li><a class="navigation__link" href="#contact" >Contact</a></li>
         </ul>
       </div>
     </div>
@@ -180,7 +180,7 @@
   <hr class="star-dark mb-5">
   <div class="container page-section">
     <div class="row text-center">
-      <h4><a href="#hidden" data-toggle="collapse" class="text-center">Contact Me Here</a></h4>
+      <h4><a href="#hidden" id="contact" data-toggle="collapse" class="text-center">Contact Me Here</a></h4>
       <div id="hidden" class="collapse">
           <section id="contact">
               <div class="container">
@@ -253,7 +253,20 @@
   var shiftWindow = function() { scrollBy(0, -100) };
   window.addEventListener("hashchange", shiftWindow);
   function load() { if (window.location.hash) shiftWindow(); }
+
+  
+
+  
 </script>
+
+<script type="text/javascript">
+  jQuery( document ).ready(function() {
+     jQuery('.navbar-collapse a').click(function(){ 
+       jQuery('.navbar-collapse').css('height', '0');
+       jQuery('.navbar-collapse').removeClass('in');
+     });  
+  });
+ </script>
 </body>
 
 </html>

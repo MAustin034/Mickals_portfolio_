@@ -1,4 +1,7 @@
 
+html {
+    scroll-behavior: smooth;
+}
 
 .navbar {
     overflow: hidden;
@@ -99,3 +102,4 @@ footer {
         font-size: 1.7em;
     }
 }
+
